@@ -6,9 +6,9 @@ Starter Theme de BTG Communication. Développé par [Grégoire] de [BTG] [Commun
 
     Sass (CSS preprocessor)
 
-    ```bash
+    ````bash
         npm run sass
-    ```
+    ````
 
 [btg]: https://www.btg-communication.fr
 [communication]: https://www.btg-communication.fr
