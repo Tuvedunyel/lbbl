@@ -8,9 +8,9 @@ Sass
 
 ## Script npm
 
-    ````bash
-        npm run sass
-    ````
+```bash
+    npm run sass
+```
 
 [btg]: https://www.btg-communication.fr
 [communication]: https://www.btg-communication.fr
