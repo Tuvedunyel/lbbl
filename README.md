@@ -2,9 +2,11 @@
 
 Starter Theme de BTG Communication. Développé par [Grégoire] de [BTG] [Communication]
 
-## Dependencies
+## Technologies
 
-    Sass (CSS preprocessor)
+Sass
+
+## Script npm
 
     ````bash
         npm run sass
