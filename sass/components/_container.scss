@@ -1,4 +1,10 @@
+@use "./../abstracts" as var;
+
 .container {
-  max-width: 85%;
+  max-width: 90%;
   margin-inline: auto;
+
+  @include var.breakpoint(1506px) {
+    max-width: 95%;
+  }
 }

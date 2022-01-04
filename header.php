@@ -22,7 +22,12 @@
                         wp_nav_menu( array(
                             'theme_location' => 'header-menu',
                             'container' => false,
-                            'menu_class' => 'header__menu__list'
+                            'menu_class' => 'header__menu__list',
+                             'fallback_cb' => false,
+                            'items_wrap' => '<div class="menu-btn">
+                                <div class="menu-btn__burger">
+                                </div>
+                            </div><ul id="%1$s" class="%2$s" hidden>%3$s</ul>',
                         ) );
                     ?>
                 </nav>

@@ -1,2 +1,64 @@
 @use "./../base";
 @use "./../abstracts" as var;
+
+header {
+  padding-block: 2.2rem;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__image__container {
+  @include var.breakpoint(1735px) {
+    max-width: 12%;
+  }
+  @include var.breakpoint(1246px) {
+    max-width: 100%;
+  }
+}
+
+.header__menu__container {
+  display: flex;
+  align-items: center;
+}
+
+#menu-main-menu {
+  display: flex;
+
+  .menu-item {
+    a {
+      @include var.font-modifier(
+        var.$font-base,
+        var.$font-size-small,
+        normal,
+        400
+      );
+      color: var.$primary-color;
+      text-decoration: none;
+
+      &:hover {
+        color: var.$tertiary-color;
+        text-decoration: underline;
+      }
+    }
+
+    &:first-of-type {
+      margin-right: 0.85em;
+    }
+
+    &:not(:first-of-type) {
+      border-left: 1px solid var.$tertiary-color;
+      padding-inline: 0.85em;
+    }
+    @include var.breakpoint(1735px) {
+      &:not(:first-of-type) {
+        padding-inline: 0.55em;
+      }
+      &:first-of-type {
+        margin-right: 0.55em;
+      }
+    }
+  }
+}
