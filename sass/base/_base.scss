@@ -1,3 +1,5 @@
+@use "typographie";
+
 /* Set root font-size @10px equivalent */
 html {
   font-size: 0.625em; /* fallback IE8+ */
@@ -165,3 +167,9 @@ ul {
 }
 
 /* Set font-family, base font-size and line-height */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
