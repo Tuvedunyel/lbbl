@@ -12,7 +12,9 @@
     <header>
         <div class="container">
             <section class="header__image__container">
-                <img src="" alt="">
+                <a href="<?php echo home_url(  ) ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>./img/logo.png" alt="logo du site">
+                </a>
             </section>
             <section class="header__menu__container">
                 <nav class="header__menu">
