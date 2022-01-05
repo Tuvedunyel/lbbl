@@ -11,10 +11,14 @@ footer {
 }
 
 .contact-info h4 {
-  @inclue var.font-modifier(var.$font-base, var.$font-size-h4, normal, 600)
+  @include var.font-modifier(var.$font-base, var.$font-size-h4, normal, 600);
 
   &:nth-of-type(even) {
     color: var.$tertiary-color;
     margin-inline: 0.3em;
   }
+}
+
+#map {
+  height: 180px;
 }

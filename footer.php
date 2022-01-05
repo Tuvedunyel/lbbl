@@ -14,7 +14,9 @@
             <?php endif; ?>
         </div>
     </section>
-    <section class="map"></section>
+    <section class="map">
+        <div id="map"></div>
+    </section>
     <section class="footer-menu"></section>
     <section class="legal-mention"></section>
 </footer>
