@@ -1,9 +1,5 @@
 const windowWidth = window.innerWidth;
 
-// menuBtn.addEventListener("click", () => {
-//   menu.classList.toggle("show");
-// });
-
 if (windowWidth <= 1418) {
   const menuBtn = document.querySelector(".menu-btn");
   const menu = document.getElementById("menu-main-menu");
@@ -24,14 +20,14 @@ if (windowWidth <= 1418) {
   const menuBtnBurger = document.querySelector(".menu-btn__burger");
 }
 
-var map = L.map("map").setView([47.39163756468422, 0.6965481695038303], 20);
+var map = L.map("map").setView([47.39483175852117, 0.6867013712465384], 15);
 
-// L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-//   attribution:
-//     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-// }).addTo(map);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
 
-// L.marker([47.39163756468422, 0.6965481695038303])
-//   .addTo(mymap)
-//   .bindPopup("BTG Communication, <br /> Agence de communication à 360°")
-//   .openPopup();
+L.marker([47.39483175852117, 0.6867013712465384])
+  .addTo(map)
+  .bindPopup("Maître Modestie Corde")
+  .openPopup();
