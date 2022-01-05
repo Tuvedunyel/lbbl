@@ -10,7 +10,6 @@
   }
 
   .header__menu {
-    position: relative;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -79,6 +78,31 @@
 
     &.show {
       top: 100%;
+    }
+  }
+}
+
+@include var.breakpoint(980px) {
+  #menu-main-menu {
+    flex-direction: column;
+    align-items: center;
+
+    top: -880%;
+
+    .menu-item {
+      &:first-of-type {
+        margin-right: 0;
+      }
+      &:not(:first-of-type) {
+        padding-inline: 0;
+        border: 0px;
+      }
+    }
+
+    .menu-item:not(:last-of-type) {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var.$tertiary-color;
+      padding-bottom: 1.5rem;
     }
   }
 }

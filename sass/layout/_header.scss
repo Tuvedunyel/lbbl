@@ -8,6 +8,7 @@ header {
 header .container {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .header__image__container {
@@ -26,6 +27,7 @@ header .container {
 
 #menu-main-menu {
   display: flex;
+  transition: 0.6s ease-in-out;
 
   .menu-item {
     a {
