@@ -19,6 +19,13 @@ footer {
   }
 }
 
+.map-container {
+  width: 100%;
+  max-width: 1600px;
+  margin-top: 3em;
+}
+
 #map {
-  height: 180px;
+  height: 375px;
+  width: 100%;
 }
