@@ -14,7 +14,6 @@
 </head>
 <body <?php body_class( ); ?>>
     <?php wp_body_open( ); ?>
-
     <header>
         <div class="container">
             <section class="header__image__container">

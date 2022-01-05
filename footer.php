@@ -14,6 +14,20 @@
             <?php endif; ?>
         </div>
     </section>
+    <?php 
+        $longitude = get_field('longitude', 'options');
+        $latitude = get_field('latitude', 'options');
+        $zoom = get_field('zoom', 'options');
+        $textMarker = get_field('texte_marker', 'options');
+
+        var_dump($textMarker);
+    ?>
+    <script>
+        const longitude = JSON.stringify(<?php echo $longitude; ?>);
+        const latitude = JSON.stringify(<?php echo $latitude; ?>);
+        const zoom = JSON.stringify(<?php echo $zoom; ?>);
+        const textMarker = JSON.stringify(<?php echo "'$textMarker'"; ?>);
+    </script>
     <section class="map-container">
         <div id="map"></div>
     </section>

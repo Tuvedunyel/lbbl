@@ -28,11 +28,5 @@ if( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'		=> false,
         'position'    	=> 2
 	) );
-
-    acf_add_options_sub_page( array(
-		'page_title' 	=> 'Options de la carte',
-		'menu_title'	=> 'Carte',
-		'parent_slug'	=> 'options-carte',
-	) );
 	
 }
