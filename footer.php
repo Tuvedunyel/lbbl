@@ -20,7 +20,6 @@
         $zoom = get_field('zoom', 'options');
         $textMarker = get_field('texte_marker', 'options');
 
-        var_dump($textMarker);
     ?>
     <script>
         const longitude = JSON.stringify(<?php echo $longitude; ?>);
@@ -31,7 +30,13 @@
     <section class="map-container">
         <div id="map"></div>
     </section>
-    <section class="footer-menu"></section>
+    <section class="footer-menu">
+        <div class="socials">
+            <?php dynamic_sidebar( 'footer-widget' ) ?>
+        </div>
+        <div class="footer-menu"></div>
+        <div class="contact-details"></div>
+    </section>
     <section class="legal-mention"></section>
 </footer>
 

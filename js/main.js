@@ -27,4 +27,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-L.marker([longitude, latitude]).addTo(map).bindPopup($textMarker).openPopup();
+L.marker([longitude, latitude])
+  .addTo(map)
+  .bindPopup(JSON.parse(textMarker))
+  .openPopup();
