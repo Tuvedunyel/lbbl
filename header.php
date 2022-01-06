@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes( ) ?>>
+<html <?php language_attributes( ); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
         <div class="container">
             <section class="header__image__container">
                 <a href="<?php echo home_url(  ) ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>./img/logo.png" alt="logo du site">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo du site">
                 </a>
             </section>
             <section class="header__menu__container">
@@ -32,7 +32,7 @@
                             'items_wrap' => '<div class="menu-btn">
                                 <div class="menu-btn__burger">
                                 </div>
-                            </div><ul id="%1$s" class="%2$s" hidden>%3$s</ul>',
+                            </div><ul id="menu-main-menu" class="%2$s" >%3$s</ul>',
                         ) );
                     ?>
                 </nav>

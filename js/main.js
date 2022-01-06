@@ -1,9 +1,8 @@
 const windowWidth = window.innerWidth;
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.getElementById("menu-main-menu");
 
 if (windowWidth <= 1418) {
-  const menuBtn = document.querySelector(".menu-btn");
-  const menu = document.getElementById("menu-main-menu");
-
   let menuOpen = false;
   menuBtn.addEventListener("click", () => {
     if (!menuOpen) {
