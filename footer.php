@@ -61,7 +61,7 @@
             </div>
             <div class="quick-access">
                 <h4><?= get_field('titre_acces_rapide', 'options'); ?></h4>
-                <nav id="footer-navigation">
+                <nav id="footer-navigation" aria-label="information de contact">
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'footer-menu',
