@@ -3,3 +3,7 @@
 @use "layout";
 @use "components";
 @use "pages";
+
+h4 {
+  @include var.font-modifier(var.$font-base, var.$font-size-h4, normal, 600);
+}

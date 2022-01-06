@@ -21,11 +21,80 @@ footer {
 
 .map-container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 100vw;
   margin-top: 3em;
 }
 
 #map {
   height: 375px;
   width: 100%;
+}
+
+.footer-menu {
+  margin-top: 10.3rem;
+}
+
+.footer-menu .container-narrow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4.5rem;
+
+  h4 {
+    padding-bottom: 1.45rem;
+    border-bottom: 1px solid var.$tertiary-color;
+  }
+
+  .socials-container {
+    margin-top: 3.85rem;
+    display: flex;
+    align-items: center;
+    a:not(:last-of-type) {
+      margin-right: 3.2rem;
+    }
+    img {
+      max-width: 5.8rem;
+      max-height: 5.8rem;
+    }
+  }
+}
+
+#footer-navigation {
+  margin-top: 3.8rem;
+
+  a {
+    text-decoration: none;
+    color: var.$primary-color;
+    @include var.font-modifier(
+      var.$font-base,
+      var.$font-size-base,
+      normal,
+      300
+    );
+    line-height: 1.8;
+
+    &:hover {
+      color: var.$tertiary-color;
+    }
+  }
+}
+
+address {
+  margin-top: 3.8rem;
+
+  strong {
+    display: block;
+
+    &:not(:first-of-type) {
+      margin-top: 0.5rem;
+    }
+
+    &:nth-of-type(2) {
+      margin-top: 2.5rem;
+    }
+  }
+
+  a {
+    color: var.$primary-color;
+    text-decoration: none;
+  }
 }

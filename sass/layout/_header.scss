@@ -47,6 +47,12 @@ header .container {
       }
     }
 
+    &.current_page_item {
+      a {
+        color: var.$tertiary-color;
+      }
+    }
+
     &:first-of-type {
       margin-right: 0.85em;
     }
