@@ -104,7 +104,19 @@
             </div>
         </div>
     </section>
-    <section class="legal-mention"></section>
+    <section class="legal-mention">
+        <div class="container-narrow">
+            <nav id="mention-menu" aria-label="Mentions légales, politique de confidentialité et plan du site">
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'mention-menu',
+                    'container' => false,
+                    'menu_class' => 'legal-menu__list',
+                    'fallback_cb' => false,
+                    ) );
+                ?>
+            </nav>
+        </div>
+    </section>
 </footer>
 
 <?php wp_footer( ); ?>

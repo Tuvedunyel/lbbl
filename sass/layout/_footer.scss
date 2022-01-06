@@ -8,10 +8,30 @@ footer {
 .contact-info .container-narrow {
   display: flex;
   justify-content: center;
+
+  @include var.breakpoint(735px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .contact-info h4 {
   @include var.font-modifier(var.$font-base, var.$font-size-h4, normal, 600);
+
+  @include var.breakpoint(1397px) {
+    @include var.font-modifier(var.$font-base, var.$font-size-h2, normal, 600);
+  }
+
+  @include var.breakpoint(1176px) {
+    @include var.font-modifier(var.$font-base, 30px, normal, 600);
+  }
+  @include var.breakpoint(1104px) {
+    @include var.font-modifier(var.$font-base, var.$font-size-h3, normal, 600);
+  }
+  @include var.breakpoint(735px) {
+    @include var.font-modifier(var.$font-base, var.$font-size-h4, normal, 600);
+    text-align: center;
+  }
 
   &:nth-of-type(even) {
     color: var.$tertiary-color;
@@ -96,5 +116,34 @@ address {
   a {
     color: var.$primary-color;
     text-decoration: none;
+  }
+}
+
+.legal-mention {
+  background: var.$primary-color;
+  padding-block: 2.8rem;
+  margin-top: 7.5rem;
+}
+#mention-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .menu-item {
+    &:not(:last-of-type)::after {
+      content: "-";
+      color: white;
+      margin-inline: 0.5rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    @include var.font-modifier(
+      var.$font-base,
+      var.$font-size-base,
+      normal,
+      300
+    );
   }
 }
