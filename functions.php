@@ -31,12 +31,3 @@ if( function_exists( 'acf_add_options_page' ) ) {
 	) );
 	
 }
-
-register_sidebar( array(
-	'id' => 'footer-widget',
-	'name' => 'Widget bas de page',
-    'before_widget'  => '<div class="site__sidebar__widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title' => '<h4 class="site__sidebar__widget__title">',
-    'after_title' => '</h4>',
-) );

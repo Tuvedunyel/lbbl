@@ -32,9 +32,39 @@
     </section>
     <section class="footer-menu">
         <div class="socials">
-            <?php dynamic_sidebar( 'footer-widget' ) ?>
+            <h4><?= get_field('titre_socials', 'options') ?></h4>
+            <?php if (have_rows('socials', 'options')):
+                while (have_rows('socials', 'options')): the_row(); ?>
+                <?php 
+                    $link = get_sub_field('lien_socials', 'options');
+
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                    <a href="<?= $link_url; ?>" title="<?= $link_title; ?>" target="<?= $link_target; ?>">
+                       <?php $image = get_sub_field('image_socials', 'options');
+                        $url = $image['url'];
+                        $alt = $image['alt'];
+                        ?>
+                        <img src="<?= esc_url($url); ?>" alt="<?= esc_attr($alt); ?>">
+                    </a>
+                <?php endwhile ?>
+            <?php endif ?>
         </div>
-        <div class="footer-menu"></div>
+        <div class="quick-access">
+            <h4><?= get_field('titre_acces_rapide', 'options'); ?></h4>
+            <nav id="footer-menu">
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu',
+                        'container' => false,
+                        'menu_class' => 'footer-menu__list',
+                        'fallback_cb' => false,
+                        ) );
+                ?>
+            </nav>
+        </div>
         <div class="contact-details"></div>
     </section>
     <section class="legal-mention"></section>

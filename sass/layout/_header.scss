@@ -31,6 +31,7 @@ header .container {
 
   .menu-item {
     a {
+      text-transform: uppercase;
       @include var.font-modifier(
         var.$font-base,
         var.$font-size-small,
