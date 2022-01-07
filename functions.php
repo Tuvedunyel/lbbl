@@ -14,7 +14,8 @@
             'header-menu' => 'Header Menu',
             'social-menu' => 'Social Menu',
             'footer-menu' => 'Footer Menu',
-            'mention-menu' => 'Mention Menu'
+            'mention-menu' => 'Mention Menu',
+            'page-menu' => 'Page Menu'
         ) );
     }
     add_action( 'init', 'btg_register_menus' );
