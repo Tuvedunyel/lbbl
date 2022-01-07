@@ -16,6 +16,11 @@ h1,
   text-transform: uppercase;
 }
 
+h2 {
+  @include var.font-modifier(var.$font-base, var.$font-size-h2, normal, 600);
+  color: var.$tertiary-color;
+}
+
 h3,
 .h3 {
   @include var.font-modifier(var.$font-base, var.$font-size-h3, normal, 500);

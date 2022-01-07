@@ -29,27 +29,33 @@
     </section>
     <article>
         <div class="container-narrow">
-            <?php the_content(); ?>
+            <div class="content-wrapper">
+                <?php the_content(); ?>
+            </div>
+        </div>
             <?php if (have_rows('liste')) : ?>
                 <div class="zone-ancre">
-                    <?php while (have_rows('liste')) : the_row(); ?>
-                        <section id="<?= get_sub_field('ancre'); ?>">
-                        <div class="image-container">
-                            <?php $image = get_sub_field('image'); 
-                                $image_url = $image['url'];
-                                $image_alt = $image['alt'];
-                            ?>
-                            <img src="<?= $image_url; ?>" alt="<?= $image_alt; ?>">
-                        </div>    
-                            <div class="list-content">
-                                <h2><?php the_sub_field('titre'); ?></h2>
-                                <?php the_sub_field('contenu'); ?>
-                            </div>
-                        </section>
-                    <?php endwhile; ?>
+                    <div class="container-narrow">
+                        <div class="top-left-border"></div>
+                        <?php while (have_rows('liste')) : the_row(); ?>
+                            <section id="<?= get_sub_field('ancre'); ?>">
+                            <div class="image-container">
+                                <?php $image = get_sub_field('image'); 
+                                    $image_url = $image['url'];
+                                    $image_alt = $image['alt'];
+                                ?>
+                                <img src="<?= $image_url; ?>" alt="<?= $image_alt; ?>">
+                            </div>    
+                                <div class="list-content">
+                                    <h2><?php the_sub_field('titre'); ?></h2>
+                                    <?php the_sub_field('contenu'); ?>
+                                </div>
+                            </section>
+                        <?php endwhile; ?>
+                        <div class="bottom-right-border"></div>
+                    </div>
                 </div>
             <?php endif; ?>
-        </div>
     </article>
 </main>
 
