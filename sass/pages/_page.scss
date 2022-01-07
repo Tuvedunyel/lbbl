@@ -1,0 +1,87 @@
+@use "./../abstracts" as var;
+
+.parallax-background {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    isset: 0;
+    object-position: center center;
+  }
+}
+
+.hero-banner-content {
+  padding-block: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var.$secondary-color;
+
+  @include var.breakpoint(1651px) {
+    .container-narrow {
+      max-width: 85%;
+    }
+  }
+
+  @include var.breakpoint(1457px) {
+    .container-narrow {
+      max-width: 90%;
+    }
+  }
+}
+
+#separator {
+  width: 40%;
+  height: 1px;
+  background-color: var.$tertiary-color;
+  margin: 0 auto;
+  margin-bottom: 4.75rem;
+}
+
+#page-navigation {
+  margin-top: 2.55rem;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .menu-item:not(:last-of-type)::after {
+      content: "|";
+      color: var.$tertiary-color;
+      margin-inline: 1.45rem;
+    }
+
+    a {
+      color: var.$primary-color;
+      text-decoration: none;
+    }
+
+    @include var.breakpoint(1376px) {
+      flex-direction: column;
+
+      .menu-item {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:not(:last-of-type)::after {
+          content: "";
+          width: 40px;
+          border-bottom: 1px solid var.$tertiary-color;
+          margin-inline: 0;
+          margin-block: 1.45rem;
+        }
+      }
+    }
+  }
+}
