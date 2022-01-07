@@ -14,6 +14,16 @@
     isset: 0;
     object-position: center center;
   }
+
+  @include var.breakpoint(1046px) {
+    height: 300px;
+  }
+  @include var.breakpoint(1046px) {
+    height: 200px;
+  }
+  @include var.breakpoint(1046px) {
+    height: 150px;
+  }
 }
 
 .hero-banner-content {

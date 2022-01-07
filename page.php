@@ -30,6 +30,25 @@
     <article>
         <div class="container-narrow">
             <?php the_content(); ?>
+            <?php if (have_rows('liste')) : ?>
+                <div class="zone-ancre">
+                    <?php while (have_rows('liste')) : the_row(); ?>
+                        <section id="<?= get_sub_field('ancre'); ?>">
+                        <div class="image-container">
+                            <?php $image = get_sub_field('image'); 
+                                $image_url = $image['url'];
+                                $image_alt = $image['alt'];
+                            ?>
+                            <img src="<?= $image_url; ?>" alt="<?= $image_alt; ?>">
+                        </div>    
+                            <div class="list-content">
+                                <h2><?php the_sub_field('titre'); ?></h2>
+                                <?php the_sub_field('contenu'); ?>
+                            </div>
+                        </section>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </article>
 </main>
