@@ -116,6 +116,14 @@ article {
       margin-right: 0.5em;
       line-height: 1;
     }
+
+    @include var.breakpoint(587px) {
+      text-indent: -1.3em;
+
+      &::before {
+        margin-right: 0.2em;
+      }
+    }
   }
 }
 
@@ -129,6 +137,10 @@ article {
   .top-left-border,
   .bottom-right-border {
     position: absolute;
+
+    @include var.breakpoint(456px) {
+      display: none;
+    }
   }
 
   .top-left-border {
@@ -138,6 +150,11 @@ article {
     left: -3em;
     width: 12rem;
     height: 11.7rem;
+
+    @include var.breakpoint(725px) {
+      top: -1em;
+      left: -2em;
+    }
   }
 
   .bottom-right-border {
@@ -147,6 +164,11 @@ article {
     right: -3em;
     width: 12rem;
     height: 11.7rem;
+
+    @include var.breakpoint(725px) {
+      bottom: -1em;
+      right: -2em;
+    }
   }
 
   section {
@@ -158,6 +180,10 @@ article {
 
     &:not(:last-of-type) {
       margin-bottom: 4.5rem;
+    }
+
+    @include var.breakpoint(725px) {
+      grid-template-columns: 1fr;
     }
   }
 }
