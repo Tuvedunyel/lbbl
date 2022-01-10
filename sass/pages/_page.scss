@@ -219,6 +219,37 @@ article {
 .page-complexe {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2%;
+    left: -1%;
+    border-top: 18px solid var.$tertiary-color;
+    border-left: 18px solid var.$tertiary-color;
+    width: 12.05rem;
+    height: 11.75rem;
+
+    @include var.breakpoint(725px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2%;
+    right: -1%;
+    border-bottom: 18px solid var.$tertiary-color;
+    border-right: 18px solid var.$tertiary-color;
+    width: 12.05rem;
+    height: 11.75rem;
+
+    @include var.breakpoint(725px) {
+      display: none;
+    }
+  }
 
   @include var.breakpoint(1250px) {
     grid-template-columns: repeat(2, 1fr);

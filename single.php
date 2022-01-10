@@ -18,11 +18,15 @@
                 
                 <nav id="page-navigation">
                     <div id="separator"></div>
-                    <?php wp_nav_menu( array(
-                        'theme_location' => 'page-menu',
-                        'container' => '',
-                        'menu_class' => 'page-navigation-list'
-                    )); ?>
+                    <?php if (have_rows('menu_page')) : ?>
+                        <ul id="menu-menu-de-page" class="page-navigation-list">
+                            <?php while (have_rows('menu_page')): the_row(); ?>
+                                <li class="menu-item">
+                                    <a href="#<?= get_sub_field('ancre'); ?>"><?= get_sub_field('texte') ?></a>
+                                </li>
+                            <?php endwhile ?>
+                        </ul>    
+                    <?php endif; ?>
                 </nav>
             </div>
         </div>
