@@ -44,6 +44,15 @@
     align-items: center;
     justify-content: center;
 
+    @include var.breakpoint(950px) {
+      column-gap: 2.5rem;
+    }
+
+    @include var.breakpoint(750px) {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+    }
+
     label,
     input,
     textarea,
@@ -65,11 +74,20 @@
     grid-column: 1 / 3;
     align-self: center;
     justify-self: center;
+
+    @include var.breakpoint(750px) {
+      grid-column: 1;
+    }
   }
 
   .message {
     grid-row: 5;
     grid-column: 1 / 3;
+
+    @include var.breakpoint(750px) {
+      grid-column: 1;
+      grid-row: unset;
+    }
   }
 
   .send {
@@ -78,6 +96,11 @@
     width: fit-content;
     width: -moz-fit-content;
     justify-self: flex-end;
+
+    @include var.breakpoint(750px) {
+      grid-row: unset;
+      grid-column: 1;
+    }
 
     input {
       background: var.$tertiary-color;
@@ -100,7 +123,64 @@
     width: fit-content;
     width: -moz-fit-content;
     position: relative;
+
+    @include var.breakpoint(750px) {
+      width: 100%;
+    }
   }
+}
+
+strong.title {
+  color: var.$tertiary-color;
+  font-size: 1.8rem;
+  margin-bottom: 2em;
+}
+
+.adresse__contact .container-narrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include var.breakpoint(906px) {
+    flex-direction: column;
+  }
+
+  @include var.breakpoint(495px) {
+    max-width: 100%;
+  }
+
+  address {
+    background-color: var.$secondary-color;
+    padding-block: 4.4rem;
+    padding-inline: 8.8rem;
+    margin-right: 4.4rem;
+
+    @include var.breakpoint(906px) {
+      margin-right: 0;
+      margin-bottom: 4.4rem;
+    }
+
+    @include var.breakpoint(495px) {
+      padding-inline: 0;
+      width: 100%;
+    }
+  }
+
+  ul {
+    text-align: center;
+
+    li:not(:last-of-type) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.horaires {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 ::-webkit-input-placeholder {
@@ -131,4 +211,15 @@
   top: 42%;
   right: 6%;
   pointer-events: none;
+
+  @include var.breakpoint(750px) {
+    right: 3%;
+  }
+
+  @include var.breakpoint(661px) {
+    right: 4%;
+  }
+  @include var.breakpoint(471px) {
+    right: 4.5%;
+  }
 }

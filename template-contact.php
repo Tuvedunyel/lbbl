@@ -24,6 +24,34 @@ get_header(); ?>
             </div>
         </div>
     </section>
+    <section class="adresse__contact">
+        <div class="container-narrow">
+            <address>
+                <strong class="title">Maître Modestie Corde,<br /> avocate au Barreau de Tours</strong>
+                <ul class="contact-acf">
+                    <li>
+                        <strong><?= get_field('adresse', 'options'); ?></strong>
+                    </li>
+                    <li>
+                        <strong>Téléphone :</strong>
+                        <p><?= get_field('telephone', 'options'); ?></p>
+                    </li>
+                    <li>
+                        <strong>Fax :</strong>
+                        <p><?= get_field('fax', 'options'); ?></p>
+                    </li>
+                    <li>
+                        <strong>Email :</strong>
+                        <p><?= get_field('email', 'options'); ?></p>
+                    </li>
+                </ul>
+            </address>
+            <aside class="horaires">
+                <strong class="title">Horaires d'ouverture :</strong>
+                <?= get_field('horaires_douvertures_:', 'options'); ?>
+            </aside>
+        </section>
+        </div>
 </main>
 
 <?php get_footer(); ?>
