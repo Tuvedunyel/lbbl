@@ -45,6 +45,37 @@
                 <?php endwhile; ?>
             <?php endif; ?>
         </section>
+
+        <?php
+            $args = array(
+            'post_type' => 'post'
+            );
+
+        $post_query = new WP_Query($args);
+        if ( $post_query->have_posts() ) : ?>
+            <section class="posts">
+                <div class="container-narrow">
+                    <h2>Les compétences de notre cabinet d'avocats</h2>
+                    <div class="posts__background-black">
+                        <h4><?= get_field('slogan_post') ?></h4>
+                    </div>
+                    <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+                        <div class="post">
+                            <div class="post__image">
+                                <?php the_post_thumbnail() ?>
+                            </div>
+                            <div class="post__content">
+                                <h3><?php the_title(); ?></h3>
+                                <div class="separator"></div>
+                                <?= get_field('extrait'); ?>
+                                <a href="<?php the_permalink() ?>">Lire la suite</a>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </section>
+            <?php wp_reset_postdata(  ); ?>
+        <?php endif; ?>
     </main>
 
 <?php get_footer(); ?>
