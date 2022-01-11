@@ -1,0 +1,49 @@
+@use "../abstracts" as var;
+
+.front__hero-banner {
+  background-image: url("../img/slider.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1000px;
+
+  .container-narrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .right__text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      align-self: flex-end;
+      color: white;
+      text-decoration: none;
+      @include var.font-modifier(
+        var.$font-base,
+        var.$font-size-h1,
+        normal,
+        300
+      );
+      text-transform: uppercase;
+      padding: 1.2rem 4rem;
+      border: 1px solid var.$tertiary-color;
+      border-radius: 7rem;
+      background: var.$tertiary-color;
+
+      &:hover {
+        color: var.$tertiary-color;
+        background: transparent;
+      }
+    }
+  }
+}
+
+.front-page__h1 {
+  @include var.font-modifier(var.$font-base, var.$font-size-h1, normal, 300);
+  margin-bottom: 7.4rem;
+}
