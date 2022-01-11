@@ -12,13 +12,38 @@
                 </div>
             </div>
         </section>
-        <section id="<?= get_field('ancre'); ?>">
+        <section id="<?= get_field('ancre'); ?>" class="front-page__title">
             <div class="container-narrow">
                 <h1><?php the_title(); ?></h1>
-                <strong><?= get_field('sous-titre'); ?></strong>
+                <h3><?= get_field('sous-titre'); ?></h3>
                 <div class="separator"></div>
-                <?php the_content(); ?>
+                <aside>
+                    <?php the_content(); ?>
+                </aside>
             </div>
+        </section>
+
+        <section class="primary-content">
+            <?php if(have_rows('section')): ?>
+                <?php while(have_rows('section')): the_row();
+                    $couleur = get_sub_field('couleur')
+                ?>
+                    <article class="<?= $couleur == 'couleur' ? 'couleur' : 'blanc';  ?>">
+                        <div class="container-narrow">
+                            <div class="article__img-container">
+                                <?php $image = get_sub_field('image');
+                                    $image_url = $image['url'];
+                                    $image_alt = $image['alt'];
+                                ?>
+                                <img src="<?= $image_url ?>" alt="<?= $image_alt; ?>">
+                            </div>
+                            <div class="article__text">
+                                <h2><?= get_sub_field('titre'); ?></h2>
+                                <?= get_sub_field('texte'); ?>
+                        </div>
+                    </article>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </section>
     </main>
 
