@@ -2,7 +2,11 @@
 
 footer {
   background-color: white;
-  padding-top: 9rem;
+}
+
+.contact-info {
+  padding-block: 9rem;
+  background: var.$secondary-color;
 }
 
 .contact-info .container-narrow {
@@ -42,7 +46,6 @@ footer {
 .map-container {
   width: 100%;
   max-width: 100vw;
-  margin-top: 3em;
 }
 
 #map {

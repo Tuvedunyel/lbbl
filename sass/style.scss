@@ -14,6 +14,7 @@ h1,
   @include var.font-modifier(var.$font-base, var.$font-size-h1, normal, 600);
   color: var.$tertiary-color;
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
