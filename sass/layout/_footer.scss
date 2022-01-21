@@ -9,6 +9,10 @@ footer {
   background: var.$secondary-color;
 }
 
+.contact-page ~ footer .contact-info {
+  background: white;
+}
+
 .contact-info .container-narrow {
   display: flex;
   justify-content: center;

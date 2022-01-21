@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <main class="front-page">
+    <main >
         <section class="front__hero-banner">
             <div class="container-narrow">
                 <div class="modestie">
