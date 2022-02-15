@@ -87,15 +87,6 @@
                     <strong>Téléphone :</strong>
                     <p><?= get_field('telephone', 'options'); ?></p>
                     <?php endif; ?>
-                    <?php if (get_field('fax', 'options')) : ?>
-                    <?php 
-                        $fax = get_field('lien_fax', 'options');
-                        $fax_url = $fax['url'];
-                        $fax_title = $fax['title'];    
-                    ?>
-                    <strong>Fax :</strong>
-                    <p><?= get_field('fax', 'options'); ?></p>
-                    <?php endif; ?>
                     <?php if (get_field('email', 'options')): ?>
                     <strong>Mail :</strong>
                     <a href="mailto:<?= get_field('email', 'options'); ?>"><?= get_field('email', 'options'); ?></a>

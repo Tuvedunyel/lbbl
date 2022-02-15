@@ -27,7 +27,7 @@ get_header(); ?>
     <section class="adresse__contact">
         <div class="container-narrow">
             <address>
-                <strong class="title">Maître Modestie Corde,<br /> avocate au Barreau de Tours</strong>
+                <strong class="title">Maître Bernard, <br /> avocate au Barreau de Tours</strong>
                 <ul class="contact-acf">
                     <li>
                         <strong><?= get_field('adresse', 'options'); ?></strong>

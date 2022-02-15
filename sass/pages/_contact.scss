@@ -12,33 +12,12 @@
   .container-narrow {
     position: relative;
     margin-top: 10.8rem;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -5%;
-      left: -5%;
-      width: 12.05rem;
-      height: 11.75rem;
-      border-left: 18px solid var.$tertiary-color;
-      border-top: 18px solid var.$tertiary-color;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -5%;
-      right: -5%;
-      width: 12.05rem;
-      height: 11.75rem;
-      border-right: 18px solid var.$tertiary-color;
-      border-bottom: 18px solid var.$tertiary-color;
-    }
+    background: var.$quaternary-color
   }
 
   form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     column-gap: 6rem;
     row-gap: 2.1rem;
     align-items: center;

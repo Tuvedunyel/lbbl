@@ -9,9 +9,6 @@ footer {
   background: var.$secondary-color;
 }
 
-.contact-page ~ footer .contact-info {
-  background: white;
-}
 
 .contact-info .container-narrow {
   display: flex;
@@ -25,6 +22,7 @@ footer {
 
 .contact-info h4 {
   @include var.font-modifier(var.$font-base, var.$font-size-h4, normal, 600);
+  color: white;
 
   @include var.breakpoint(1397px) {
     @include var.font-modifier(var.$font-base, var.$font-size-h2, normal, 600);
