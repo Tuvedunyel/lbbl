@@ -17,7 +17,6 @@ get_header(); ?>
             <?php endif; ?>
     </div>
     <section id="contact">
-        <h1><?php the_title(); ?></h1>
         <div class="container-narrow">
             <div class="contact-form__container">
                 <?php echo do_shortcode('[contact-form-7 id="26" title="Formulaire de contact 1"]'); ?>
@@ -25,6 +24,7 @@ get_header(); ?>
         </div>
     </section>
     <section class="adresse__contact">
+        <h1><?php the_title(); ?></h1>
         <div class="container-narrow">
             <address>
                 <strong class="title">Maître Bernard, <br /> avocate au Barreau de Tours</strong>

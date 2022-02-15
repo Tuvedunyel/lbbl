@@ -3,23 +3,51 @@
 .contact-page {
   text-align: center;
 
+  .hero-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .parallax-background {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
   h1 {
     margin-top: 4.5rem;
   }
 }
 
+.adresse__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row: 2;
+  grid-column: 1;
+  margin-top: 10.8rem;
+
+  h1 {
+    width: 75%;
+    text-align: center;
+    margin-top: 0;
+  }
+  h1, .title {
+    color: var.$secondary-color;
+  }
+}
+
 #contact {
+  grid-column: 2;
+  grid-row: 2;
   .container-narrow {
     position: relative;
     margin-top: 10.8rem;
-    background: var.$quaternary-color
+    background: var.$quaternary-color;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    column-gap: 6rem;
-    row-gap: 2.1rem;
     align-items: center;
     justify-content: center;
 
@@ -75,6 +103,7 @@
     width: fit-content;
     width: -moz-fit-content;
     justify-self: flex-end;
+    align-self: flex-end;
 
     @include var.breakpoint(750px) {
       grid-row: unset;
@@ -82,25 +111,18 @@
     }
 
     input {
-      background: var.$tertiary-color;
-      border: 2px solid transparent;
-      border-radius: 3px;
-      color: white;
-      font-weight: 500;
+      color: black;
+      font-weight: 600;
+      font-size: 1.6rem;
       text-transform: uppercase;
-
-      &:hover {
-        background: white;
-        border: 2px solid var.$tertiary-color;
-        color: var.$tertiary-color;
-      }
+      text-decoration: underline;
+      border: 0px transparent;
+      background: transparent;
     }
   }
 
   .thematique {
     justify-self: flex-start;
-    width: fit-content;
-    width: -moz-fit-content;
     position: relative;
 
     @include var.breakpoint(750px) {
@@ -117,6 +139,8 @@ strong.title {
 
 .adresse__contact .container-narrow {
   display: flex;
+  margin-top: 8.7rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -129,7 +153,6 @@ strong.title {
   }
 
   address {
-    background-color: var.$secondary-color;
     padding-block: 4.4rem;
     padding-inline: 8.8rem;
     margin-right: 4.4rem;
@@ -184,21 +207,21 @@ strong.title {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 11px solid transparent;
-  border-top: 11px solid var.$tertiary-color;
+  border-top: 11px solid var.$secondary-color;
   background-color: white;
   position: absolute;
   top: 42%;
-  right: 6%;
+  right: 3%;
   pointer-events: none;
 
-  @include var.breakpoint(750px) {
-    right: 3%;
-  }
+  // @include var.breakpoint(750px) {
+  //   right: 3%;
+  // }
 
-  @include var.breakpoint(661px) {
-    right: 4%;
-  }
-  @include var.breakpoint(471px) {
-    right: 4.5%;
-  }
+  // @include var.breakpoint(661px) {
+  //   right: 4%;
+  // }
+  // @include var.breakpoint(471px) {
+  //   right: 4.5%;
+  // }
 }
