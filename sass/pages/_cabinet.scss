@@ -1,0 +1,95 @@
+@use "../abstracts" as var;
+
+#cabinet {
+  #title-cabinet {
+    display: flex;
+    position: relative;
+    margin-bottom: 31rem;
+
+    .left-image {
+      background: var.$quaternary-color;
+      padding-block: 6rem;
+
+      img {
+        margin-right: 23rem;
+      }
+    }
+  }
+
+  .right-content-cabinet {
+    background: white;
+    position: absolute;
+    left: 42%;
+    top: 42%;
+    width: 50%;
+    padding: 1.9rem 3.4rem;
+
+    h2 {
+      color: black;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .image-cabinet {
+    width: 100%;
+    max-width: 40.4rem;
+  }
+
+  .logo-cabinet {
+    width: 100%;
+    max-width: 16.48rem;
+    position: absolute;
+    top: -50%;
+    right: 64%;
+  }
+
+  .left-image {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+
+  .suivi-contrat {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5.4rem;
+
+    position: relative;
+
+    img {
+      width: 100%;
+      max-width: 62rem;
+    }
+
+    .right-content-cabinet {
+      left: unset;
+      right: 45.5%;
+      top: -38%;
+      width: 41%;
+    }
+  }
+}
+
+#cabinet-content {
+    margin-bottom: 8.3rem;
+  h2 {
+    color: black;
+    margin-bottom: 4.3rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url("./../img/logo-solo.svg");
+      width: 155px;
+      height: 131px;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: 15%;
+      left: 18%;
+    }
+  }
+
+  .wp-block-column p:not(:last-of-type) {
+    margin-bottom: 2.5em;
+  }
+}
