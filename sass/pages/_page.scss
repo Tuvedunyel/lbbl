@@ -1,30 +1,5 @@
 @use "./../abstracts" as var;
 
-.parallax-background {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-
-  img {
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    isset: 0;
-    object-position: center center;
-  }
-
-  @include var.breakpoint(1046px) {
-    height: 300px;
-  }
-  @include var.breakpoint(1046px) {
-    height: 200px;
-  }
-  @include var.breakpoint(1046px) {
-    height: 150px;
-  }
-}
 
 .hero-banner-content {
   padding-block: 4.5rem;

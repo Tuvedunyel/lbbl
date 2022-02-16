@@ -1,17 +1,40 @@
 @use "../abstracts" as var;
 
 #cabinet {
+  .container-narrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   #title-cabinet {
     display: flex;
     position: relative;
     margin-bottom: 31rem;
 
+    @include var.breakpoint(1071px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10rem;
+    }
+
     .left-image {
       background: var.$quaternary-color;
       padding-block: 6rem;
 
+      @include var.breakpoint(1263px) {
+          justify-content: center;
+      }
+
       img {
         margin-right: 23rem;
+
+        @include var.breakpoint(1263px) {
+            margin-right: 21rem;
+        }
+        @include var.breakpoint(1071px) {
+            margin-right: 0;
+        }
       }
     }
   }
@@ -23,6 +46,16 @@
     top: 42%;
     width: 50%;
     padding: 1.9rem 3.4rem;
+
+    @include var.breakpoint(1071px) {
+        position: initial;
+        width: 75%;
+        margin-inline: auto;
+    }
+    @include var.breakpoint(768px) {
+        padding: 0;
+        width: 85%;
+    }
 
     h2 {
       color: black;
@@ -41,20 +74,44 @@
     position: absolute;
     top: -50%;
     right: 64%;
+
+    @include var.breakpoint(1328px) {
+        top: -37%;
+        right: 54%;
+    }
+
+    @include var.breakpoint(1263px) {
+        display: none;
+        top: 26%;
+
+    }
   }
 
   .left-image {
     display: flex;
     justify-content: flex-end;
     width: 50%;
+
+    @include var.breakpoint(1263px) {
+        width: 77%;
+    }
+
+    @include var.breakpoint(1071px) {
+        margin-bottom: 3em;
+        width: 100%;
+        justify-content: center;
+    }
   }
 
   .suivi-contrat {
     display: flex;
     justify-content: center;
     margin-bottom: 5.4rem;
-
     position: relative;
+
+    @include var.breakpoint(1071px) {
+        flex-direction: column-reverse;
+    }
 
     img {
       width: 100%;
@@ -66,12 +123,35 @@
       right: 45.5%;
       top: -38%;
       width: 41%;
+
+      @include var.breakpoint(1263px) {
+          width: 52%;
+          top: -20%;
+      }
+      @include var.breakpoint(1071px) {
+          width: 74%;
+      }
+      @include var.breakpoint(768px) {
+          width: 85%;
+      }
     }
   }
 }
 
 #cabinet-content {
-    margin-bottom: 8.3rem;
+  margin-bottom: 8.3rem;
+
+  .wp-block-columns {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .wp-block-column:nth-child(2n) {
+      margin-left: 0;
+      margin-top: 2.5em;
+  }
+
   h2 {
     color: black;
     margin-bottom: 4.3rem;
@@ -86,10 +166,66 @@
       position: absolute;
       bottom: 15%;
       left: 18%;
+
+      @include var.breakpoint(1210px) {
+          display: none;
+      }
     }
   }
 
   .wp-block-column p:not(:last-of-type) {
+    margin-bottom: 2.5em;
+  }
+}
+
+.bottom-cabinet {
+  background: #f1f1f1;
+  padding: 9.6rem 21.3rem;
+  position: relative;
+  width: 67%;
+  margin-bottom: 14.6rem;
+
+  @include var.breakpoint(1470px) {
+      width: 75%;
+  }
+  @include var.breakpoint(1300px) {
+      width: 100%;
+  }
+
+  @include var.breakpoint(1071px) {
+      padding: 6.6rem 8.3rem;
+  }
+  @include var.breakpoint(635px) {
+      padding: 3.6rem 1.3rem;
+  }
+
+  .content-bottom-cabinet {
+    margin-left: 2em;
+  }
+
+  img {
+    position: absolute;
+    width: 388px;
+    left: -19%;
+    top: 20%;
+
+    @include var.breakpoint(1071px) {
+        display: none;
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 4.2rem;
+    font-size: 4rem;
+    font-weight: 700;
+
+    @include var.breakpoint(401px) {
+        font-size: 3rem;
+    }
+  }
+
+  p:not(:last-of-type) {
     margin-bottom: 2.5em;
   }
 }

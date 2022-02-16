@@ -1,33 +1,12 @@
 <?php get_header(); ?>
 
-<main>
+<main class="single-main">
     <section class="hero-banner">
-        <?php if ( get_field('background_image') ) : ?>
-            <div class="parallax-background">
-                <?php $background_image = get_field('background_image');
-                    $background_image_url = $background_image['url'];
-                    $background_image_alt = $background_image['alt'];    
-                ?>
-                <img src="<?= $background_image_url ?>" alt="<?= $background_image_alt ?>">
-            </div>
-        <?php endif; ?>
         <div class="hero-banner-content">
             <div class="container-narrow">
                 <h1><?php the_title(); ?></h1>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-solo.svg" alt="Logo du site, représentant une balance">
                 <strong class="h3"><?php the_field('sous_titre'); ?></strong> 
-                
-                <nav id="page-navigation">
-                    <div id="separator"></div>
-                    <?php if (have_rows('menu_page')) : ?>
-                        <ul id="menu-menu-de-page" class="page-navigation-list">
-                            <?php while (have_rows('menu_page')): the_row(); ?>
-                                <li class="menu-item">
-                                    <a href="#<?= get_sub_field('ancre'); ?>"><?= get_sub_field('texte') ?></a>
-                                </li>
-                            <?php endwhile ?>
-                        </ul>    
-                    <?php endif; ?>
-                </nav>
             </div>
         </div>
     </section>
