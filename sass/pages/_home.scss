@@ -1,0 +1,82 @@
+@use "../abstracts" as var;
+
+.hero-banner.home-hero {
+  background-color: var.$quaternary-color;
+  padding-top: 8.1rem;
+  padding-bottom: 7.1rem;
+  .container-narrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1,
+    h3 {
+      color: black;
+    }
+
+    img {
+      max-width: 58px;
+      width: 100%;
+      margin-block: 1.04rem;
+    }
+  }
+
+  margin-bottom: 5.47rem;
+}
+
+.text-content {
+  p.has-text-align-center:first-of-type {
+    display: inline-flex;
+    justify-content: center;
+    strong {
+      display: block;
+      width: 61%;
+    }
+  }
+
+  ul {
+    margin-top: 1.3rem;
+
+    li:not(:last-of-type) {
+      margin-bottom: 1.9rem;
+    }
+  }
+}
+
+.template-home {
+  h2 {
+    @include var.font-modifier(var.$font-base, var.$font-size-h2, normal, 600);
+    text-align: left;
+    align-self: flex-start !important;
+    color: var.$secondary-color;
+  }
+
+  .post .post__image {
+      height: 321px !important;
+
+      image {
+        width: 100%;
+        height: 100%;
+      }
+  }
+
+  .post__content a {
+    color: black;
+    text-underline-offset: 1em;
+    font-weight: 600;
+    position: relative;
+    margin-right: 3em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-top: 8px solid transparent;
+      border-left: 8px solid black;
+      border-bottom: 8px solid transparent;
+      top: 21%;
+      right: -28%;
+    }
+  }
+}

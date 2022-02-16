@@ -18,7 +18,7 @@
         <div class="container">
             <section class="header__image__container">
                 <a href="<?php echo home_url(  ) ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo du site">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="logo du site">
                 </a>
             </section>
             <section class="header__menu__container">
@@ -36,6 +36,29 @@
                         ) );
                     ?>
                 </nav>
+            </section>
+            <section class="header__social_nav">
+                 <?php if (have_rows('socials', 'options')): ?>
+                <div class="socials-container">
+
+                    <?php while (have_rows('socials', 'options')): the_row(); ?>
+                    <?php 
+                    $link = get_sub_field('lien_socials', 'options');
+
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                    <a href="<?= $link_url; ?>" title="<?= $link_title; ?>" target="<?= $link_target; ?>">
+                        <?php $image = get_sub_field('image_socials', 'options');
+                        $url = $image['url'];
+                        $alt = $image['alt'];
+                        ?>
+                        <img src="<?= esc_url($url); ?>" alt="<?= esc_attr($alt); ?>">
+                    </a>
+                    <?php endwhile ?>
+                </div>
+                <?php endif ?>
             </section>
         </div>
     </header>
