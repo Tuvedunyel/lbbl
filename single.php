@@ -5,7 +5,7 @@
         <div class="hero-banner-content">
             <div class="container-narrow">
                 <h1><?php the_title(); ?></h1>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-solo.svg" alt="Logo du site, représentant une balance">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-solo-blanc.svg" alt="Logo du site, représentant une balance">
                 <strong class="h3"><?php the_field('sous_titre'); ?></strong> 
             </div>
         </div>
