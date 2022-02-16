@@ -27,3 +27,9 @@ h3,
   @include var.font-modifier(var.$font-base, var.$font-size-h3, normal, 500);
   color: var.$primary-color;
 }
+
+.hero-banner-content {
+  h1, strong, a, li, p, #page-navigation a {
+    color: white;
+  }
+}

@@ -12,7 +12,7 @@
   .header__menu {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .menu-btn {
@@ -74,7 +74,9 @@
     left: 0;
     background-color: white;
     padding-inline: 2.2rem;
+    padding-block: 2em;
     z-index: 99;
+    justify-content: center;
 
     &.show {
       top: 100%;
@@ -101,7 +103,6 @@
 
     .menu-item:not(:last-of-type) {
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid var.$tertiary-color;
       padding-bottom: 1.5rem;
     }
   }

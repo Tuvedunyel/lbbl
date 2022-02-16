@@ -15,6 +15,11 @@ header .container {
   @include var.breakpoint(1735px) {
     max-width: 12%;
   }
+  @include var.breakpoint(1418px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   @include var.breakpoint(1246px) {
     max-width: 100%;
   }
@@ -33,6 +38,9 @@ header .container {
 
     &:not(:last-of-type) {
       margin-right: 6.7em;
+      @include var.breakpoint(980px) {
+        margin-right: 0;
+      }
     }
     a {
       text-transform: uppercase;
@@ -77,5 +85,8 @@ header .container {
   img {
     width: 2.8rem;
     height: auto;
+    @include var.breakpoint(976px) {
+      width: 4.8rem;
+    }
   }
 }

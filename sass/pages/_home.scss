@@ -33,6 +33,9 @@
     strong {
       display: block;
       width: 61%;
+      @include var.breakpoint(858px) {
+        width: 100%;
+      }
     }
   }
 
@@ -55,6 +58,10 @@
 
   .post .post__image {
       height: 321px !important;
+
+      @include var.breakpoint(750px) {
+        height: auto !important;
+      }
 
       image {
         width: 100%;
