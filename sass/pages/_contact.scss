@@ -6,11 +6,21 @@
   .hero-banner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 12.7rem;
+
+    @include var.breakpoint(941px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .parallax-background {
     grid-column: 1 / 3;
     grid-row: 1;
+
+    @include var.breakpoint(941px) {
+      height: 311px;
+    }
   }
 
   h1 {
@@ -43,6 +53,11 @@
     position: relative;
     margin-top: 10.8rem;
     background: var.$quaternary-color;
+    padding: 2.9rem 3.1rem 3.9rem 3.1rem;
+
+    @include var.breakpoint(941px) {
+     margin-top: 3.8rem;
+    }
   }
 
   form {
@@ -79,7 +94,8 @@
   h3 {
     grid-row: 1;
     grid-column: 1 / 3;
-    align-self: center;
+    align-self: flex-start;
+    margin-left: 1em;
     justify-self: center;
 
     @include var.breakpoint(750px) {
@@ -104,6 +120,20 @@
     width: -moz-fit-content;
     justify-self: flex-end;
     align-self: flex-end;
+    padding: 0;
+    padding-right: 2em;
+    text-underline-offset: 0.3em;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      border-top: 8px solid transparent;
+      border-left: 8px solid black;
+      border-bottom: 8px solid transparent;
+      top: 21%;
+      right: 9%;
+    }
 
     @include var.breakpoint(750px) {
       grid-row: unset;
@@ -118,6 +148,11 @@
       text-decoration: underline;
       border: 0px transparent;
       background: transparent;
+      padding: 0;
+    }
+
+    .wpcf7-spinner {
+      position: absolute;
     }
   }
 
@@ -144,8 +179,8 @@ strong.title {
   justify-content: center;
   align-items: center;
 
-  @include var.breakpoint(906px) {
-    flex-direction: column;
+  @include var.breakpoint(941px) {
+    margin-top: 0;
   }
 
   @include var.breakpoint(495px) {
@@ -157,9 +192,9 @@ strong.title {
     padding-inline: 8.8rem;
     margin-right: 4.4rem;
 
-    @include var.breakpoint(906px) {
+    
+    @include var.breakpoint(941px) {
       margin-right: 0;
-      margin-bottom: 4.4rem;
     }
 
     @include var.breakpoint(495px) {
@@ -211,17 +246,33 @@ strong.title {
   background-color: white;
   position: absolute;
   top: 42%;
-  right: 3%;
+  right: 3.5%;
   pointer-events: none;
 
-  // @include var.breakpoint(750px) {
-  //   right: 3%;
-  // }
+  @include var.breakpoint(1253px) {
+    right: 4%;
+  }
 
-  // @include var.breakpoint(661px) {
-  //   right: 4%;
-  // }
-  // @include var.breakpoint(471px) {
-  //   right: 4.5%;
-  // }
+  @include var.breakpoint(1117px) {
+    right: 5%;
+  }
+  @include var.breakpoint(941px) {
+    right: 3%;
+  }
+
+  @include var.breakpoint(720px) {
+    right: 4%;
+  }
+  @include var.breakpoint(558px) {
+    right: 5%;
+  }
+  @include var.breakpoint(456px) {
+    right: 6%;
+  }
+  @include var.breakpoint(398px) {
+    right: 7%;
+  }
+  @include var.breakpoint(348px) {
+    right: 8%;
+  }
 }
