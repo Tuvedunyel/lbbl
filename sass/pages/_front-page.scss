@@ -3,7 +3,7 @@
 .front__hero-banner {
   position: relative;
   height: 793px;
-  
+
   .front__hero__background {
     background-image: url("../img/slider.jpg");
     background-size: cover;
@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 94%;
     top: -12%;
     z-index: -1;
     pointer-events: none;
@@ -20,6 +20,7 @@
   .container-narrow {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: flex-end;
     height: 100%;
 
@@ -116,8 +117,30 @@
   }
 
   aside {
-    max-width: 69%;
     color: var.$quaternary-color;
+    h2 {
+      margin-bottom: 1.8rem;
+    }
+    h2, p, strong, h3, h4 {
+      color: white;
+      text-align: left;
+    }
+
+    .wp-block-column:first-of-type {
+      margin-right: 4.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: fit-content;
+      width: -moz-fit-content;
+      width: 26.8rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      width: 26.8rem;
+    }
   }
 }
 
@@ -317,6 +340,110 @@
       position: absolute;
       top: -31%;
       left: 0;
+    }
+  }
+}
+
+.thematique-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: -2.5em !important;
+  z-index: 1;
+
+  li:not(:last-of-type) {
+    margin-right: 1.5rem;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 1.8rem 2rem;
+    border: none;
+
+    &.active {
+      background: var.$secondary-color;
+      strong {
+        color: white;
+      }
+    }
+
+    div {
+      background: white;
+      margin-right: 1.1rem;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    strong {
+      pointer-events: none;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.detail-theme {
+  background: white;
+  padding: 6.3rem 7.5rem 4rem 7.5rem;
+  position: relative;
+  max-width: 92%;
+  margin-bottom: 11.3rem;
+}
+
+.detail-article {
+  display: none;
+  position: relative;
+
+  div {
+    margin-left: 1.9rem;
+    width: 89%;
+
+    h3 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+    }
+    p {
+      font-weight: 300;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  a {
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+    color: #000;
+    text-underline-offset: 1em;
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-right: 3em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-top: 8px solid transparent;
+      border-left: 15px solid #000;
+      border-bottom: 8px solid transparent;
+      top: 32%;
+      right: -28%;
     }
   }
 }

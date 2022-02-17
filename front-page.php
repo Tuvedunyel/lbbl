@@ -7,10 +7,12 @@
                 <?php if ( have_rows('thematique') ): ?>
                     <ul class="thematique-list">
                         <?php while (have_rows('thematique')): the_row(); ?>
-                            <li id="<?= get_sub_field('attribut'); ?>">
+                            <li>
                                 <button class="thematique-button">
                                     <?php $logo = get_sub_field('logo'); ?>
-                                    <img src="<?= $logo['url']; ?>" alt="<?= $logo['alt']; ?>">
+                                    <div>
+                                        <img src="<?= $logo['url']; ?>" alt="<?= $logo['alt']; ?>">
+                                    </div>
                                     <strong><?php the_sub_field('theme'); ?></strong>
                                 </button>
                             </li>
@@ -30,15 +32,12 @@
                                 <a href="<?php the_sub_field('lien') ?>">En savoir plus</a>
                             </article>
                         <?php endwhile; ?>
-                </div>
+                    </div>
                 <?php endif; ?>
             </div>
         </section>
-        <section id="<?= get_field('ancre'); ?>" class="front-page__title">
+        <section class="front-page__title">
             <div class="container-narrow">
-                <h1><?php the_title(); ?></h1>
-                <h3><?= get_field('sous-titre'); ?></h3>
-                <div class="separator"></div>
                 <aside>
                     <?php the_content(); ?>
                 </aside>
