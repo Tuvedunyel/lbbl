@@ -54,7 +54,7 @@
                         $url = $image['url'];
                         $alt = $image['alt'];
                         ?>
-                        <img src="<?= esc_url($url); ?>" alt="<?= esc_attr($alt); ?>">
+                        <img class="socials-img" src="<?= esc_url($url); ?>" alt="<?= esc_attr($alt); ?>">
                     </a>
                     <?php endwhile ?>
                 </div>
