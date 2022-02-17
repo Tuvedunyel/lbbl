@@ -2,14 +2,36 @@
 
     <main >
         <section class="front__hero-banner">
+            <div class="front__hero__background"></div>
             <div class="container-narrow">
-                <div class="modestie">
-                    <span class="screen-reader-text">Modestie Corde, Avocate généraliste inscrite au barreau de Tours</span>
+                <?php if ( have_rows('thematique') ): ?>
+                    <ul class="thematique-list">
+                        <?php while (have_rows('thematique')): the_row(); ?>
+                            <li id="<?= get_sub_field('attribut'); ?>">
+                                <button class="thematique-button">
+                                    <?php $logo = get_sub_field('logo'); ?>
+                                    <img src="<?= $logo['url']; ?>" alt="<?= $logo['alt']; ?>">
+                                    <strong><?php the_sub_field('theme'); ?></strong>
+                                </button>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php endif; ?>
+                <?php if(have_rows('detail_thematique')): ?>
+                    <div class="detail-theme">
+                        <?php while(have_rows('detail_thematique')): the_row(); ?>
+                            <article class="detail-article">
+                                <?php $image_theme = get_sub_field('image'); ?>
+                                <img src="<?= $image_theme['url']; ?>" alt="<?= $image_theme['alt']; ?>">
+                                <div>
+                                    <h3><?php the_sub_field('titre') ?></h3>
+                                    <?php the_sub_field('texte') ?>
+                                </div>
+                                <a href="<?php the_sub_field('lien') ?>">En savoir plus</a>
+                            </article>
+                        <?php endwhile; ?>
                 </div>
-                <div class="right__text">
-                    <h1 class="front-page__h1"><?= get_field('titre_principal'); ?></h1>
-                    <a href="#<?= get_field('ancre') ?>">Lire plus</a>
-                </div>
+                <?php endif; ?>
             </div>
         </section>
         <section id="<?= get_field('ancre'); ?>" class="front-page__title">

@@ -30,3 +30,11 @@ L.marker([longitude, latitude])
   .addTo(map)
   .bindPopup(JSON.parse(textMarker))
   .openPopup();
+
+const themeButton = document.querySelectorAll(".thematique-list > li");
+
+for (let button of themeButton) {
+  button.addEventListener('click', (e) => {
+    console.log(e.target.innerText);
+  })
+}

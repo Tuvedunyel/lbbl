@@ -36,6 +36,11 @@
   margin-top: 8.8rem;
   margin-bottom: 11rem;
 
+  .container-narrow {
+    display: flex;
+    flex-direction: column;
+  }
+
   article {
     display: flex;
     justify-content: center;
@@ -158,5 +163,10 @@
       }
       
     }
+  }
+
+  .bottom-cabinet {
+    align-self: center;
+    margin-top: 11rem;
   }
 }
