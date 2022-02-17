@@ -43,60 +43,32 @@
                 </aside>
             </div>
         </section>
-
-        <section class="primary-content">
-            <?php if(have_rows('section')): ?>
-                <?php while(have_rows('section')): the_row();
-                    $couleur = get_sub_field('couleur')
-                ?>
-                    <article class="<?= $couleur == 'couleur' ? 'couleur' : 'blanc';  ?>">
-                        <div class="container-narrow">
-                            <div class="article__img-container">
-                                <?php $image = get_sub_field('image');
-                                    $image_url = $image['url'];
-                                    $image_alt = $image['alt'];
-                                ?>
-                                <img src="<?= $image_url ?>" alt="<?= $image_alt; ?>">
-                            </div>
-                            <div class="article__text">
-                                <h2><?= get_sub_field('titre'); ?></h2>
-                                <?= get_sub_field('texte'); ?>
-                        </div>
-                    </article>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </section>
-
-        <?php
-            $args = array(
-            'post_type' => 'post'
-            );
-
-        $post_query = new WP_Query($args);
-        if ( $post_query->have_posts() ) : ?>
-            <section class="posts">
-                <div class="container-narrow">
-                    <h2>Les compétences de notre cabinet d'avocats</h2>
-                    <div class="posts__background-black">
-                        <h4><?= get_field('slogan_post') ?></h4>
-                    </div>
+        <div id="front-post">
+            <?php get_template_part('layout/cabinet'); ?>
+            <?php
+                $args = array(
+                'post_type' => 'post'
+                );
+    
+            $post_query = new WP_Query($args);
+            if ( $post_query->have_posts() ) : ?>
+                <section class="posts">
                     <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-                        <div class="post">
-                            <div class="post__image">
-                                <?php the_post_thumbnail() ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="<?php echo get_template_directory_uri() ?>/img/front-blog.svg" alt="<?php the_title(); ?>">
+                                </div>
+                                <div class="post__content">
+                                    <h3><?php the_title(); ?></h3>
+                                </div>
                             </div>
-                            <div class="post__content">
-                                <h3><?php the_title(); ?></h3>
-                                <div class="separator"></div>
-                                <?= get_field('extrait'); ?>
-                                <a href="<?php the_permalink() ?>">Lire la suite</a>
-                            </div>
-                        </div>
+                        </a>
                     <?php endwhile; ?>
-                </div>
-            </section>
-            <?php wp_reset_postdata(  ); ?>
-        <?php endif; ?>
+                </section>
+                <?php wp_reset_postdata(  ); ?>
+            <?php endif; ?>
+        </div>
     </main>
 
 <?php get_footer(); ?>

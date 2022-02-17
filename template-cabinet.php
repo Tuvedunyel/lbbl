@@ -35,15 +35,7 @@ get_header(); ?>
         <artile id="cabinet-content">
             <?php the_content(); ?>
         </artile>
-        <section class="bottom-cabinet">
-            <?php if( !empty($logoCabinet) ): ?>
-                <img class="image-bottom-cabinet" src="<?= $logoCabinet['url']; ?>" alt="<?= $logoCabinet['alt']; ?>" />
-            <?php endif; ?>
-            <div class="content-bottom-cabinet">
-                <h3><?php the_field('titre_bas_page'); ?></h3>
-                <?php the_field('contenu_bas_page'); ?>
-            </div>
-        </section>
+        <?php get_template_part('layout/cabinet'); ?>
     </div>
 </main>	
 <?php get_footer(); ?>

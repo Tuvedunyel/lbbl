@@ -59,7 +59,6 @@ for (let button of themeButton) {
   })
 }
 
-console.log(themeButton[0].children);
 
 if(themeButton.length > 0) {
   toggleActive(themeButton[0].children[0]);
