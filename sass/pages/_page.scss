@@ -1,14 +1,23 @@
 @use "./../abstracts" as var;
 
-
 .hero-banner-content {
   padding-block: 4.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   background-color: var.$secondary-color;
+
+  .container-narrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    max-width: 5.8rem;
+    margin-block: 0.4em;
+  }
 
   @include var.breakpoint(1651px) {
     .container-narrow {
@@ -23,257 +32,131 @@
   }
 }
 
-#separator {
-  width: 40%;
-  height: 1px;
-  background-color: var.$tertiary-color;
-  margin: 0 auto;
-  margin-bottom: 4.75rem;
-}
+.single-content-container {
+  margin-top: 8.8rem;
+  margin-bottom: 11rem;
 
-#page-navigation {
-  margin-top: 2.55rem;
-
-  ul {
+  article {
     display: flex;
     justify-content: center;
-    align-items: center;
 
-    .menu-item:not(:last-of-type)::after {
-      content: "|";
-      color: var.$tertiary-color;
-      margin-inline: 1.45rem;
-    }
-
-    a {
-      color: var.$primary-color;
-      text-decoration: none;
-    }
-
-    @include var.breakpoint(1376px) {
+    @include var.breakpoint(1242px) {
       flex-direction: column;
-
-      .menu-item {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &:not(:last-of-type)::after {
-          content: "";
-          width: 40px;
-          border-bottom: 1px solid var.$tertiary-color;
-          margin-inline: 0;
-          margin-block: 1.45rem;
-        }
-      }
-    }
-  }
-}
-
-article {
-  margin-top: 3.8rem;
-}
-
-.content-wrapper {
-  margin-bottom: 8.1rem;
-}
-
-.content-wrapper ul {
-  margin: 0 !important;
-  list-style: none;
-  li {
-    text-indent: -2em;
-    &::before {
-      content: ".";
-      font-size: 5rem;
-      color: var.$tertiary-color;
-      margin-right: 0.5em;
-      line-height: 1;
+      align-items: center;
     }
 
-    @include var.breakpoint(587px) {
-      text-indent: -1.3em;
-
-      &::before {
-        margin-right: 0.2em;
-      }
-    }
-  }
-}
-
-.zone-ancre {
-  background: var.$secondary-color;
-  .container-narrow {
-    padding-block: 6.4rem;
-    position: relative;
-  }
-
-  .top-left-border,
-  .bottom-right-border {
-    position: absolute;
-
-    @include var.breakpoint(456px) {
-      display: none;
-    }
-  }
-
-  .top-left-border {
-    border-top: 18px solid var.$tertiary-color;
-    border-left: 18px solid var.$tertiary-color;
-    top: -2em;
-    left: -3em;
-    width: 12rem;
-    height: 11.7rem;
-
-    @include var.breakpoint(725px) {
-      top: -1em;
-      left: -2em;
-    }
-  }
-
-  .bottom-right-border {
-    border-bottom: 18px solid var.$tertiary-color;
-    border-right: 18px solid var.$tertiary-color;
-    bottom: -2em;
-    right: -3em;
-    width: 12rem;
-    height: 11.7rem;
-
-    @include var.breakpoint(725px) {
-      bottom: -1em;
-      right: -2em;
-    }
-  }
-
-  section {
-    display: grid;
-    grid-template-columns: 0.3fr 0.7fr;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-
-    &:not(:last-of-type) {
-      margin-bottom: 4.5rem;
+    &:not(:first-of-type) {
+      margin-top: 2.3rem;
     }
 
-    @include var.breakpoint(725px) {
-      grid-template-columns: 1fr;
-    }
-  }
-}
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
 
-.list-content {
-  h2 {
-    color: var.$tertiary-color;
-    text-transform: uppercase;
-    margin-bottom: 1.3rem;
-  }
-
-  ul {
-    margin: 0 !important;
-    list-style: none;
-
-    & + p {
-      margin-top: 1em;
-    }
-    li {
-      text-indent: -2em;
-      margin-left: 3rem;
-      &::before {
-        content: ".";
-        font-size: 5rem;
-        color: var.$tertiary-color;
-        margin-right: 0.2em;
-        line-height: 1;
-      }
-    }
-  }
-}
-
-.page-complexe {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -2%;
-    left: -1%;
-    border-top: 18px solid var.$tertiary-color;
-    border-left: 18px solid var.$tertiary-color;
-    width: 12.05rem;
-    height: 11.75rem;
-
-    @include var.breakpoint(725px) {
-      display: none;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -2%;
-    right: -1%;
-    border-bottom: 18px solid var.$tertiary-color;
-    border-right: 18px solid var.$tertiary-color;
-    width: 12.05rem;
-    height: 11.75rem;
-
-    @include var.breakpoint(725px) {
-      display: none;
-    }
-  }
-
-  @include var.breakpoint(1250px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include var.breakpoint(850px) {
-    grid-template-columns: 1fr;
-
-    &.container-narrow {
-      max-width: 100%;
-    }
-  }
-
-  section {
-    @include var.breakpoint(1250px) {
-      &.right-column {
-        grid-column: 1 / 3;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @include var.breakpoint(850px) {
-      &.right-column {
-        grid-column: 1;
-        display: flex;
+      @include var.breakpoint(1242px) {
         flex-direction: column;
       }
-    }
 
-    div[id] {
-      padding-inline: 2.2rem;
-
-      &.couleur {
-        background: var.$secondary-color;
-      }
-      &:first-of-type {
-        padding-top: 4.9rem;
-        padding-bottom: 3.2rem;
+      h2 {
+        margin-left: 2.8rem;
       }
 
-      &:last-of-type {
-        padding-top: 3.2rem;
-        padding-bottom: 4.9rem;
+      .single-text {
+        left: unset;
+        right: -8%;
       }
     }
-  }
 
-  .list-content p:not(:last-of-type) {
-    margin-bottom: 1em;
+    .single-img {
+      width: 43%;
+
+      @include var.breakpoint(1242px) {
+        width: auto;
+      }
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 62rem;
+    }
+
+
+    .single-content {
+      position: relative;
+      width: calc(100% - 43%);
+
+      @include var.breakpoint(1626px) {
+        width: 61%;
+      }
+
+      @include var.breakpoint(1400px) {
+        width: 64%;
+      }
+      @include var.breakpoint(620px) {
+        width: 100%;
+        margin-top: 2.3rem;
+      }
+    }
+
+    .single-text {
+      position: absolute;
+      background: white;
+      bottom: -2%;
+      left: -8%;
+      padding: 2.5rem 6.5rem 4.8rem 3.2rem;
+
+      @include var.breakpoint(1615px) {
+        padding: 2.5rem 6.5rem 1.8rem 3.2rem;
+      }
+      @include var.breakpoint(1397px) {
+        padding: 1.5rem 0 1.8rem 1.2rem;
+      }
+      @include var.breakpoint(1297px) {
+        bottom: -6%;
+      }
+      @include var.breakpoint(1297px) {
+        bottom: -8%;
+        padding: 1.5rem 0 0.8rem 1.2rem;
+      }
+      @include var.breakpoint(1242px) {
+        position: initial;
+      }
+      @include var.breakpoint(620px) {
+        padding: 0;
+        margin-top: 2.3rem;
+      }
+    }
+
+    h2 {
+      font-size: var.$font-size-h1;
+      color: black;
+      margin-left: 2.3rem;
+      margin-top: 4.3em;
+
+      @include var.breakpoint(1883px) {
+        margin-top: 3.3rem;
+      }
+
+      @include var.breakpoint(1662px) {
+        margin-top: 0;
+      }
+
+      @include var.breakpoint(1242px) {
+        position: absolute;
+        background: white;
+        padding: 1.5rem 3.2rem;
+        top: -26%;
+        left: -4%;
+      }
+
+      @include var.breakpoint(620px) {
+        position: initial;
+        background: none;
+        padding: 0;
+        margin-left: 0;
+        text-align: center;
+      }
+      
+    }
   }
 }
