@@ -4,6 +4,10 @@
   position: relative;
   height: 793px;
 
+  @include var.breakpoint(1130px) {
+    height: auto;
+  }
+
   .front__hero__background {
     background-image: url("../img/slider.jpg");
     background-size: cover;
@@ -15,6 +19,11 @@
     top: -12%;
     z-index: -1;
     pointer-events: none;
+
+    @include var.breakpoint(1130px) {
+      height: 100%;
+      top: 0;
+    }
   }
 
   .container-narrow {
@@ -28,6 +37,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+    @include var.breakpoint(1130px) {
+      padding-top: 5em;
     }
   }
 
@@ -98,6 +110,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @include var.breakpoint(857px) {
+    .wp-block-columns {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   h1 {
@@ -356,8 +376,17 @@
   margin-bottom: -2.5em !important;
   z-index: 1;
 
+  @include var.breakpoint(1130px) {
+    flex-direction: column;
+  }
+
   li:not(:last-of-type) {
     margin-right: 1.5rem;
+
+    @include var.breakpoint(1130px) {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
   }
 
   button {
@@ -367,6 +396,9 @@
     background: #f1f1f1;
     padding: 1.8rem 2rem;
     border: none;
+    @include var.breakpoint(635px) {
+      flex-direction: column;
+    }
 
     &.active {
       background: var.$secondary-color;
@@ -385,6 +417,11 @@
       justify-content: center;
       align-items: center;
       pointer-events: none;
+
+      @include var.breakpoint(635px) {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
     }
 
     strong {
@@ -401,6 +438,11 @@
   position: relative;
   max-width: 92%;
   margin-bottom: 11.3rem;
+
+  @include var.breakpoint(1130px) {
+    max-width: 100%;
+    padding: 6.3rem 1.5rem 4rem 1.5rem;
+  }
 }
 
 .detail-article {
@@ -410,6 +452,12 @@
   div {
     margin-left: 1.9rem;
     width: 89%;
+
+    @include var.breakpoint(1130px) {
+      margin-left: 0;
+      margin-top: 1.9rem;
+      width: 100%;
+    }
 
     h3 {
       font-size: 2.6rem;
@@ -428,6 +476,12 @@
 
   &.show {
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include var.breakpoint(1130px) {
+      flex-direction: column;
+    }
   }
 
   a {
@@ -439,6 +493,12 @@
     font-size: 2.6rem;
     font-weight: 600;
     margin-right: 3em;
+
+    @include var.breakpoint(1130px) {
+      margin-right: 0;
+      margin-top: 1.9rem;
+      position: relative;
+    }
 
     &::after {
       content: "";
@@ -457,6 +517,10 @@
   justify-content: center;
   align-items: center;
 
+  @include var.breakpoint(966px) {
+    flex-direction: column;
+  }
+
   .bottom-cabinet {
     width: 55%;
     background: none;
@@ -466,12 +530,32 @@
     display: flex;
     justify-content: flex-end;
 
+    @include var.breakpoint(966px) {
+      width: 100%;
+      padding-inline: 1.5rem;
+      justify-content: center;
+    }
+
     .content-bottom-cabinet {
       width: 55%;
+      @include var.breakpoint(1508px) {
+        width: 66%;
+      }
+      @include var.breakpoint(1492px) {
+        width: 90%;
+        justify-content: center;
+        margin-inline: auto;
+      }
     }
 
     img {
-    left: -1%;
+      left: -1%;
+      @include var.breakpoint(1508px) {
+        left: -10%;
+      }
+      @include var.breakpoint(1492px) {
+        display: none;
+      }
     }
   }
 
@@ -480,9 +564,19 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5em;
     row-gap: 2em;
-    background: #F1F1F1;
+    background: #f1f1f1;
     padding: 5.7rem 37rem 5.7rem 11.8rem;
     width: 45%;
+
+    @include var.breakpoint(1788px) {
+      padding: 5.7rem 26rem 5.7rem 3.8rem;
+    }
+    @include var.breakpoint(1365px) {
+      padding: 5.7rem 2rem 5.7rem 2rem;
+    }
+    @include var.breakpoint(966px) {
+      width: 100%;
+    }
 
     a {
       display: flex;
@@ -518,18 +612,24 @@
   }
 }
 
-
 .contact-front {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../img/computer-front.jpg');
+  background: url("../img/computer-front.jpg");
   background-size: cover;
   background-position: center;
   padding: 10.8rem 0;
 
   .container-narrow {
     max-width: 55%;
+
+    @include var.breakpoint(1325px) {
+      max-width: 77%;
+    }
+    @include var.breakpoint(891px) {
+      max-width: 95%;
+    }
   }
 
   &__title {
@@ -537,19 +637,34 @@
     padding: 3.3rem 11.7rem;
     position: relative;
 
+    @include var.breakpoint(533px) {
+      padding: 3.3rem 6.7rem;
+    }
+    @include var.breakpoint(428px) {
+      padding: 3.3rem 1rem;
+    }
+
     &::before {
       content: "";
-      background: url('../img/logo-solo.svg');
+      background: url("../img/logo-solo.svg");
       background-repeat: no-repeat;
       width: 54px;
       height: 45px;
       position: absolute;
       left: 2%;
+
+      @include var.breakpoint(428px) {
+        display: none;
+      }
     }
 
     h3 {
       font-size: 4rem;
       text-transform: uppercase;
+
+      @include var.breakpoint(629px) {
+        font-size: 3rem;
+      }
     }
   }
 
@@ -578,6 +693,13 @@
       margin-top: 4.6rem;
       margin-right: 2.6rem;
       margin-bottom: 4.3rem;
+
+      @include var.breakpoint(573px) {
+        align-self: center;
+      }
+      @include var.breakpoint(357px) {
+        font-size: 2rem;
+      }
 
       &::before {
         content: "";
