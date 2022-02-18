@@ -69,6 +69,17 @@
                 <?php wp_reset_postdata(  ); ?>
             <?php endif; ?>
         </div>
+        <section class="contact-front">
+            <div class="container-narrow contact-container">
+                <div class="contact-front__title">
+                    <h3><?php the_field('titre_contact');?></h3>
+                </div>
+                <div class="contact-front__texte">
+                    <?php the_field('texte_contact');?>
+                    <a href="<?php the_field('lien_contact') ?>"><?php the_field('texte_bouton'); ?></a>
+                </div>
+            </div>
+        </section>
     </main>
 
 <?php get_footer(); ?>

@@ -517,3 +517,77 @@
     }
   }
 }
+
+
+.contact-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../img/computer-front.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 10.8rem 0;
+
+  .container-narrow {
+    max-width: 55%;
+  }
+
+  &__title {
+    background: white;
+    padding: 3.3rem 11.7rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url('../img/logo-solo.svg');
+      background-repeat: no-repeat;
+      width: 54px;
+      height: 45px;
+      position: absolute;
+      left: 2%;
+    }
+
+    h3 {
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__texte {
+    background: hsl(0 0% 100% / 0.86);
+    padding: 2.9rem 3.8rem;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 1.8rem;
+
+      &:not(:first-of-type) {
+        margin-top: 1em;
+      }
+    }
+
+    a {
+      align-self: flex-end;
+      text-transform: uppercase;
+      color: black;
+      text-underline-offset: 0.5em;
+      font-size: 2.6rem;
+      font-weight: 600;
+      position: relative;
+      margin-top: 4.6rem;
+      margin-right: 2.6rem;
+      margin-bottom: 4.3rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-top: 8px solid transparent;
+        border-left: 15px solid black;
+        border-bottom: 8px solid transparent;
+        right: -15%;
+        top: 35%;
+      }
+    }
+  }
+}
