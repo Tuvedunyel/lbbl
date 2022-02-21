@@ -161,6 +161,12 @@
       text-align: left;
     }
 
+    @include var.breakpoint(857px) {
+      h2 {
+        text-align: center
+      }
+    }
+
     .wp-block-column:first-of-type {
       margin-right: 4.8rem;
       display: flex;
@@ -169,6 +175,9 @@
       width: fit-content;
       width: -moz-fit-content;
       width: 26.8rem;
+      @include var.breakpoint(857px) {
+        margin-right: 0;
+      }
     }
 
     img {

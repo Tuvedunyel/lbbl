@@ -141,6 +141,9 @@
 
 #cabinet-content {
   margin-bottom: 8.3rem;
+  @include var.breakpoint(1071px) {
+    margin-bottom: 3.3rem;
+  }
 
   .wp-block-columns {
       flex-direction: column;
@@ -195,6 +198,7 @@
 
   @include var.breakpoint(1071px) {
       padding: 6.6rem 8.3rem;
+      margin-bottom: 5rem;
   }
   @include var.breakpoint(635px) {
       padding: 3.6rem 1.3rem;
