@@ -437,6 +437,8 @@
       align-items: center;
       pointer-events: none;
 
+      
+
       @include var.breakpoint(635px) {
         margin-right: 0;
         margin-bottom: 1.5rem;
@@ -498,6 +500,11 @@
     align-items: center;
     justify-content: center;
 
+    img {
+        max-width: 307px;
+        height: auto;
+      }
+
     @include var.breakpoint(1130px) {
       flex-direction: column;
     }
@@ -508,7 +515,7 @@
     bottom: -15%;
     right: 0;
     color: #000;
-    text-underline-offset: 1em;
+    text-underline-offset: 0.6em;
     font-size: 2.6rem;
     font-weight: 600;
     margin-right: 3em;
@@ -525,8 +532,8 @@
       border-top: 8px solid transparent;
       border-left: 15px solid #000;
       border-bottom: 8px solid transparent;
-      top: 32%;
-      right: -28%;
+      top: 30%;
+      right: -20%;
     }
   }
 }
