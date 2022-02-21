@@ -36,7 +36,7 @@ const articles = document.querySelectorAll(".detail-article");
 
 function showModal(theme) {
   for (let article of articles) {
-    if (article.children[1].children[0].innerText === theme) {
+    if (article.children[1].children[0].innerText=== theme) {
       article.classList.add("show");
     } else {
       article.classList.remove("show");
@@ -53,7 +53,7 @@ function toggleActive(cible) {
 
 for (let button of themeButton) {
   button.addEventListener("click", e => {
-    showModal(e.target.innerText);
+    showModal(e.target.children[1].innerText);
     toggleActive(e.target);
     e.target.classList.add("active");
   });
@@ -61,5 +61,5 @@ for (let button of themeButton) {
 
 if (themeButton.length > 0) {
   toggleActive(themeButton[0].children[0]);
-  showModal(themeButton[0].innerText);
+  showModal(themeButton[0].children[0].children[1].innerText);
 }
