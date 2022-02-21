@@ -10,6 +10,20 @@ header .container {
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  @include var.breakpoint(1418px) {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+  }
+  @include var.breakpoint(692px) {
+    grid-template-columns: 0.5fr 0.3fr 0.3fr;
+  }
+  @include var.breakpoint(388px) {
+    header .container {
+    grid-template-columns: 0.3fr 0.5fr 0.3fr;
+    }
+  }
 }
 
 .header__image__container {
@@ -19,9 +33,7 @@ header .container {
   @include var.breakpoint(1418px) {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-  @include var.breakpoint(1246px) {
+    justify-content: flex-start;
     max-width: 100%;
   }
 }
@@ -29,6 +41,10 @@ header .container {
 .header__menu__container {
   display: flex;
   align-items: center;
+
+  @include var.breakpoint(1418px) {
+    grid-column: 3;
+  }
 }
 
 #menu-main-menu {
@@ -75,6 +91,11 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include var.breakpoint(1418px) {
+    grid-column: 2;
+    grid-row: 1;
+  }
   
   .socials-container {
     display: flex;
@@ -86,6 +107,10 @@ header .container {
   img {
     width: 2.8rem;
     height: auto;
+
+    @include var.breakpoint(1418px) {
+      width: 100%;
+    }
     @include var.breakpoint(976px) {
       width: 4.8rem;
     }

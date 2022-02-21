@@ -33,6 +33,10 @@
                             </article>
                         <?php endwhile; ?>
                     </div>
+                    <noscript>
+                        Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.
+                        Voici les <a href="https://www.enable-javascript.com/fr/"> instructions pour activer JavaScript dans votre navigateur Web</a>
+                    </noscript>
                 <?php endif; ?>
             </div>
         </section>

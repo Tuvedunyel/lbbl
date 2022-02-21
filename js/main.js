@@ -1,1 +1,65 @@
-const f=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))l(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&l(i)}).observe(document,{childList:!0,subtree:!0});function m(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerpolicy&&(o.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?o.credentials="include":e.crossorigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function l(e){if(e.ep)return;e.ep=!0;const o=m(e);fetch(e.href,o)}};f();const p=window.innerWidth,s=document.querySelector(".menu-btn"),c=document.getElementById("menu-main-menu");if(p<=1418){let r=!1;s.addEventListener("click",()=>{r?(s.classList.remove("open"),r=!1,c.classList.remove("show")):(s.classList.add("open"),r=!0,c.classList.add("show"))}),document.querySelector(".menu-btn__burger")}var a=L.map("map").setView([longitude,latitude],zoom);L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(a);L.marker([longitude,latitude]).addTo(a).bindPopup(JSON.parse(textMarker)).openPopup();const n=document.querySelectorAll(".thematique-list > li"),h=document.querySelectorAll(".detail-article"),d=r=>{for(let t of h)t.children[1].children[0].innerText===r?t.classList.add("show"):t.classList.remove("show")},u=r=>{for(let t of n)t.children[0].classList.remove("active"),r.classList.add("active")};for(let r of n)r.addEventListener("click",t=>{d(t.target.innerText),u(t.target),t.target.classList.add("active")});n.length>0&&(u(n[0].children[0]),d(n[0].innerText));
+const windowWidth = window.innerWidth;
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.getElementById("menu-main-menu");
+
+if (windowWidth <= 1418) {
+  let menuOpen = false;
+  menuBtn.addEventListener("click", () => {
+    if (!menuOpen) {
+      menuBtn.classList.add("open");
+      menuOpen = true;
+      menu.classList.add("show");
+    } else {
+      menuBtn.classList.remove("open");
+      menuOpen = false;
+      menu.classList.remove("show");
+    }
+  });
+
+  const menuBtnBurger = document.querySelector(".menu-btn__burger");
+}
+
+var map = L.map("map").setView([longitude, latitude], zoom);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+L.marker([longitude, latitude])
+  .addTo(map)
+  .bindPopup(JSON.parse(textMarker))
+  .openPopup();
+
+const themeButton = document.querySelectorAll(".thematique-list > li");
+const articles = document.querySelectorAll(".detail-article");
+
+function showModal(theme) {
+  for (let article of articles) {
+    if (article.children[1].children[0].innerText === theme) {
+      article.classList.add("show");
+    } else {
+      article.classList.remove("show");
+    }
+  }
+}
+
+function toggleActive(cible) {
+  for (let button of themeButton) {
+    button.children[0].classList.remove("active");
+    cible.classList.add("active");
+  }
+}
+
+for (let button of themeButton) {
+  button.addEventListener("click", e => {
+    showModal(e.target.innerText);
+    toggleActive(e.target);
+    e.target.classList.add("active");
+  });
+}
+
+if (themeButton.length > 0) {
+  toggleActive(themeButton[0].children[0]);
+  showModal(themeButton[0].innerText);
+}

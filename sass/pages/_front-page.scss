@@ -545,6 +545,7 @@
 
   @include var.breakpoint(966px) {
     flex-direction: column;
+    padding-top: 2em;
   }
 
   .bottom-cabinet {
