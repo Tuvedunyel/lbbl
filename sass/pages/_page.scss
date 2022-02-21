@@ -63,6 +63,9 @@
 
       h2 {
         margin-left: 2.8rem;
+        @include var.breakpoint(620px) {
+          margin-left: 0;
+        }
       }
 
       .single-text {
@@ -168,5 +171,9 @@
   .bottom-cabinet {
     align-self: center;
     margin-top: 11rem;
+
+    @include var.breakpoint(1071px) {
+      margin-bottom: 0;
+    }
   }
 }
