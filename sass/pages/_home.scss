@@ -54,6 +54,12 @@
     text-align: left;
     align-self: flex-start !important;
     color: var.$secondary-color;
+    margin-bottom: 2rem;
+  }
+
+  .posts {
+    padding-bottom: 0;
+    margin-bottom: 9rem;
   }
 
   .post .post__image {
@@ -79,10 +85,10 @@
     &::after {
       content: "";
       position: absolute;
-      border-top: 8px solid transparent;
-      border-left: 8px solid black;
-      border-bottom: 8px solid transparent;
-      top: 21%;
+      border-top: 5px solid transparent;
+      border-left: 11px solid black;
+      border-bottom: 5px solid transparent;
+      top: 31%;
       right: -28%;
     }
   }

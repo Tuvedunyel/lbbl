@@ -97,6 +97,15 @@ footer {
 #footer-navigation {
   margin-top: 3.8rem;
 
+  .sub-menu {
+    margin-left: 1.2em;
+    list-style:  '-';
+
+     li {
+       padding-left: 0.3em;
+     }
+  }
+
   @include var.breakpoint(1067px) {
     ul {
       display: flex;
